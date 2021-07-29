@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1","build-css": 
-    "node-sass --include-path scss scss/eestilo.scss css/estiloo.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css":  "node-sass --include-path scss scss/estilo.scss css/estiloo.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""  
   },
   "author": "",
