@@ -18,7 +18,7 @@ for (miNumero; miNumero <= cantidadPersonasPromedio; miNumero++) {
         console.log("La suma de las edades es: ", acumuladorEdades);
         alert("Turno 1 de 8 a 9:30" + " Turno 2 de 9:30 a 11 " + "Turno 3 de 11 a 12:30" + " Turno 4 de 12:30 a 14 " + "Turno 5 de 14 a 15:30" + " Turno 6 de 15:30 a 17 " + "Turno 7 de 17 a 18:30");
         var turno = parseInt(prompt("Ingresa el numero turno que desee"));
-        let turnoDado = 3;
+        let turnoDado = 0;
         if (turno >= 1 && turno <= 7) {
             if (turno == turnoDado) {
                 do {
