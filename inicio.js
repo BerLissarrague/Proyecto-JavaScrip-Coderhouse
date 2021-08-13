@@ -16,26 +16,24 @@ for (miNumero; miNumero <= cantidadPersonasPromedio; miNumero++) {
         }
         acumuladorEdades = acumuladorEdades + edad;// acumuladorEdades += edad; contador += 1;
         console.log("La suma de las edades es: ", acumuladorEdades);
-        alert("Turno 1 de 8 a 9:30"+" Turno 2 de 9:30 a 11 " +"Turno 3 de 11 a 12:30"+ " Turno 4 de 12:30 a 14 " +"Turno 5 de 14 a 15:30"+ " Turno 6 de 15:30 a 17 " +"Turno 7 de 17 a 18:30");
+        alert("Turno 1 de 8 a 9:30" + " Turno 2 de 9:30 a 11 " + "Turno 3 de 11 a 12:30" + " Turno 4 de 12:30 a 14 " + "Turno 5 de 14 a 15:30" + " Turno 6 de 15:30 a 17 " + "Turno 7 de 17 a 18:30");
         var turno = parseInt(prompt("Ingresa el numero turno que desee"));
         let turnoDado = 3;
-        const turnos = [1, 2, 3, 4, 5, 6, 7]
         if (turno >= 1 && turno <= 7) {
-            if (turno = turnoDado) {
-                do {  
+            if (turno == turnoDado) {
+                do {
                     alert("El turno esta dado, intenta otro turno");
                     var turno = parseInt(prompt("Ingresa el numero del turno"));
+                } while (turno != turnoDado) {
+                    alert("turno Registrado");
+                    console.log("Su turno es el numero ", turno);
                 }
-                while (turno == turnos) {
-                    if (turno != turnoDado) {
-                        alert("turno Registrado");
-                        console.log("Su turno es el numero ", turno);
-                    }
-                }
-            } else {
-                alert("turno ya registrado");
-                console.log("ingrese un nuevo turno");
             }
+            else {
+                alert("turno registrado");
+                console.log("Su turno es el numero ", turno);
+            }
+
         }
         else if (turno < 1 || turno > 7) {
             alert("Solo se toman " + cantTurnos + " por dia");
