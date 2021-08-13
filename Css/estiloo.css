@@ -100,7 +100,8 @@ h3 {
 
 .carousel img {
   justify-content: center;
-  width: 90%; }
+  width: 90%;
+  max-height: 500px; }
 
 .d-block {
   margin: 0 auto; }
