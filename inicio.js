@@ -86,4 +86,4 @@ for (let miNumero = 1; miNumero <= cantidadPersonasPromedio; miNumero++) {
 console.log("Ellos son las personas que tienen turno para pasar por el estudio : ", clientes)
 promedio = acumuladorEdades / cantidadPersonasPromedio;
 console.log('el promedio de edad es: ', promedio);
- alert("Persona registrada Correctamente")
+ alert("Persona registrada Correctamente ")
