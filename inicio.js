@@ -23,9 +23,9 @@ let persona;
 let turnoInvalido;
 
 alert(bienvenido);
-
+debugger
 do {
-    cantidadPersonasPromedio = parseInt(prompt("Ingrese cantidad de turnos que desea sacar (entre 1 y 6)"));
+    cantidadPersonasPromedio = parseInt(prompt("Ingrese cantidad de turnos que desea sacar (entre 1 y 7)"));
 } while (cantidadPersonasPromedio == 0 || cantidadPersonasPromedio > 7);
 
 for (let miNumero = 1; miNumero <= cantidadPersonasPromedio; miNumero++) {
@@ -39,16 +39,16 @@ for (let miNumero = 1; miNumero <= cantidadPersonasPromedio; miNumero++) {
         alert('Edad inválida');
         while (edad > 110) {
             edad = parseInt(prompt("Ingrese nuevamente su edad"));
-        } 
-    } 
+        }
+    }
 
     acumuladorEdades += edad;
     console.log("La suma de las edades es: ", acumuladorEdades);
 
     alert("Turno 1: 8 a 9:30 - Turno 2: 9:30 a 11 - Turno 3: 11 a 12:30 - Turno 4: 12:30 a 14 - Turno 5: 14 a 15:30 - Turno 6: 15:30 a 17 - Turno 7: 17 a 18:30");
-    
+
     do {
-        turnoIngresado = parseInt(prompt("Ingresa el numero turno que desee")); 
+        turnoIngresado = parseInt(prompt("Ingresa el numero turno que desee"));
         // Indicador de turno incorrecto
         turnoInvalido = false;
 
@@ -57,7 +57,7 @@ for (let miNumero = 1; miNumero <= cantidadPersonasPromedio; miNumero++) {
             // Retorna cliente con turno registrado igual al actual
             personaRegistrada = clientes.find(cliente => cliente.turno === turnoIngresado);
         }
-    
+
         if (turnoIngresado >= 1 && turnoIngresado <= 7) {
             // Si existe turno actual
             if (personaRegistrada) {
@@ -80,10 +80,10 @@ for (let miNumero = 1; miNumero <= cantidadPersonasPromedio; miNumero++) {
             alert('El turno no se ha guardado ya que no especificó horario o canceló la transacción');
             turnoInvalido = true;
         }
-    } while (personaRegistrada || turnoInvalido);
 
+    } while (personaRegistrada || turnoInvalido);
+    alert("Personas registradas Correctamente ");
 }
 console.log("Ellos son las personas que tienen turno para pasar por el estudio : ", clientes)
 promedio = acumuladorEdades / cantidadPersonasPromedio;
 console.log('el promedio de edad es: ', promedio);
- alert("Persona registrada Correctamente ")

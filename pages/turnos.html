@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--fond Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- CSS -->
+    
+        <link rel="stylesheet" href="C:\Users\Ber Lissarrague\Desktop\Proyecto tatu\Css/estilo.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+    <title>Ink Revolution</title>
+</head>
+
+<body>
+
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="C:\Users\Ber Lissarrague\Desktop\Proyecto tatu/index2.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="menuham-container"><img src="" alt="Logo" class="menuham"></div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Juan Perez</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Clara Palma</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ismael Torres</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./turnos.html">Turnos</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h2>Saca tu turno</h2>
+    <form class="form-container" id="formulario">
+      <div class="form-group form-groupContacto">
+        <label for="full_name_id" class="control-label">Nombre</label>
+        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Nombre"autocomplete="off">
+      </div>
+
+      <div class="form-group form-groupContacto">
+        <label for="street1_id" class="control-label">E-mail</label>
+        <input type="text" class="form-control" id="street1_id" name="street1" placeholder="E-mail"autocomplete="off">
+      </div>
+
+      <div class="form-group form-groupContacto">
+        <label for="city_id" class="control-label">Edad</label>
+        <input type="number" class="form-control" id="age_id" name="age" placeholder="Edad" autocomplete="off">
+      </div>
+
+      <div class="form-group form-groupContacto">
+        <label for="street2_id" class="control-label">Turno</label>
+        <input type="number" class="form-control" id="turno_id" name="street2" placeholder="Turno"autocomplete="off">
+      </div>
+      <div class="form-group btn-contacto">
+        <button type="submit" class="btn btn-dark">Guardar</button>
+       </div>
+      </form>
+      <ul id="listaCliente">
+
+      </ul>
+      <table class="table" id="table">
+        <thead>
+            <tr>
+                <th scope="col">Turno</th>
+                <th scope="col" id= "hora">Hora</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Turno 1</th>
+                <td>   8 a 9:30 Am </td>
+               
+            <tr>
+                <th scope="row">Turno 2</th>
+                <td> 9:30 a 11:00 Am</td>
+                
+            </tr>
+            <tr>
+                <th scope="row">Turno 3</th>
+                <td>11:00 Am a 12:30 Pm</td>
+               
+            </tr>
+            <tr>
+                <th scope="row">Turno 4</th>
+                <td>12:30 a 14:00 pm</td>
+            </tr>
+            <tr>
+              <th scope="row">Turno 5</th>
+              <td> 2:00 a 3:30 Pm</td>
+          </tr>
+          <tr>
+            <th scope="row">Turno 6</th>
+            <td> 3:30 a 5:00 Pm</td>
+        </tr>
+        <tr>
+          <th scope="row">Turno 7</th>
+          <td>5:00 a 6:30 Pm</td>
+      </tr>
+                  </tbody>
+    </table>
+    
+
+
+
+      
+    
+    <!--Parte 5-->
+    <footer class="footer ">
+      <div class="redes">
+        <span> Copyright © </span>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="mailto:revolutionink@gmail.com"><i class="fas  fa-envelope"></i></a>
+      </div>
+
+    </footer>
+
+
+
+    <script src="turnos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+
+  </body>
+
+</html>
