@@ -72,13 +72,13 @@ const turnosCliente = (listaDeTurno) => {
             remove(listaDeTurno[i].turno);
         }
 
-        let btnupdate = document.createElement('span');
+        /*let btnupdate = document.createElement('span');
         btnupdate.textContent = ' Edit';
         itemcliente.appendChild(btnupdate);
         console.log(btnupdate)
         btnupdate.onclick = () => {
             update(turno, edad);
-        }
+        }*/
 
 
     }
