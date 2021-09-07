@@ -171,8 +171,16 @@ td { text-align: center;
     text-align: center;
     align-items: center;
 }
+ul{ 
+    margin: 7%
 
-
+}
+.liturnos{
+    padding :1%;
+}
+.btnedit{
+    margin:  1%;
+}
   
 @media only screen and (max-width: 600px){
     .infoconocenos{
@@ -186,6 +194,7 @@ td { text-align: center;
     }
  }
 @media only screen and (min-width: 600px) and (max-width: 780px){
+    
     .infoconocenos{
         display: flex;
         flex-direction: column;
