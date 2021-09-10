@@ -25,6 +25,7 @@ const agregarTurno = (posibleTurno) => {
     localStorage.setItem("listaDeTurnos", JSON.stringify(listaDeTurnos));    
 }
 
+//busco si existe la persona
 const buscarTurno = (turno) => {
     let personaEncontrado = listaDeTurnos.find(persona => persona.turno === turno);
     if (!personaEncontrado) {
@@ -32,7 +33,7 @@ const buscarTurno = (turno) => {
     }
     return personaEncontrado;
 }
-
+//Editor de la persona que registro el turno
 const editarTurno = (turno) => {
     let personaActual = buscarTurno(turno);
     if (personaActual) {
@@ -44,7 +45,7 @@ const editarTurno = (turno) => {
     }
 
 }
-
+// eliminador de turno
 const eliminarTurno = (turno) => {
     const persona = buscarTurno(turno);
     const index = listaDeTurnos.findIndex(persona => persona.turno === turno);
@@ -65,6 +66,7 @@ const comparar = (a, b) => {
     return 0;
 }
 
+
 formulario.addEventListener("submit", (event) => {
     const nombre = inputNombre.value;
     const edad = inputEdad.value;
@@ -73,7 +75,9 @@ formulario.addEventListener("submit", (event) => {
 
     if (edad < 15 || edad > 100) {
         alert('Edad inválida');
+        event.preventDefault()
         return;
+        
     } else if (edad >= 15 && edad < 18) {
         alert("Recorda venir con un mayor");
     }
@@ -86,6 +90,7 @@ formulario.addEventListener("submit", (event) => {
             // Si existe turno actual
             if (personaRegistrada) {
                 alert("El turno esta dado, intenta otro turno");
+                event.preventDefault()
                 return;
             }
         }
@@ -108,9 +113,9 @@ const turnosCliente = (listaDeTurnos) => {
         console.log(listaDeTurnos[i]);
         let itemcliente = document.createElement('li');
         itemcliente.className = "liturnos";
-        itemcliente.textContent = `El turno numero ${listaDeTurnos[i].turno} ha sido registrado a nombre de ${listaDeTurnos[i].nombre}.`;
+        itemcliente.textContent = `* El turno numero ${listaDeTurnos[i].turno} ha sido registrado a nombre de ${listaDeTurnos[i].nombre}.`;
         listaCliente.appendChild(itemcliente);
-
+            
         let btnremover = document.createElement('button');
         btnremover.textContent = 'Remover';
         btnremover.className = 'btn btn-dark btnremover';
