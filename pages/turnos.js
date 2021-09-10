@@ -73,6 +73,7 @@ formulario.addEventListener("submit", (event) => {
 
     if (edad < 15 || edad > 100) {
         alert('Edad inválida');
+        event.preventDefault();
         return;
     } else if (edad >= 15 && edad < 18) {
         alert("Recorda venir con un mayor");
@@ -86,6 +87,7 @@ formulario.addEventListener("submit", (event) => {
             // Si existe turno actual
             if (personaRegistrada) {
                 alert("El turno esta dado, intenta otro turno");
+                event.preventDefault();
                 return;
             }
         }
@@ -108,7 +110,7 @@ const turnosCliente = (listaDeTurnos) => {
         console.log(listaDeTurnos[i]);
         let itemcliente = document.createElement('li');
         itemcliente.className = "liturnos";
-        itemcliente.textContent = `* El turno numero ${listaDeTurnos[i].turno} ha sido registrado a nombre de ${listaDeTurnos[i].nombre}.`;
+        itemcliente.textContent = `* El turno numero ${listaDeTurnos[i].turno} ha sido registrado a nombre de ${listaDeTurnos[i].nombre}`;
         listaCliente.appendChild(itemcliente);
 
         let btnremover = document.createElement('button');
