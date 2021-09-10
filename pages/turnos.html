@@ -47,22 +47,28 @@
     <form class="form-container" id="formulario">
       <div class="form-group form-groupContacto">
         <label for="full_name_id" class="control-label">Nombre</label>
-        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Nombre"autocomplete="off">
+        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Nombre"autocomplete="off"required>
       </div>
 
       <div class="form-group form-groupContacto">
         <label for="street1_id" class="control-label">E-mail</label>
-        <input type="text" class="form-control" id="street1_id" name="street1" placeholder="E-mail"autocomplete="off">
+        <input type="text"
+         class="form-control"
+          id="street1_id" 
+          name="street1" 
+          placeholder="E-mail"
+          autocomplete="off"
+          required>
       </div>
 
       <div class="form-group form-groupContacto">
         <label for="city_id" class="control-label">Edad</label>
-        <input type="number" class="form-control" id="age_id" name="age" placeholder="Edad" autocomplete="off">
+        <input type="number" class="form-control" id="age_id" name="age" placeholder="Edad" autocomplete="off" required>
       </div>
 
       <div class="form-group form-groupContacto">
         <label for="street2_id" class="control-label">Turno</label>
-        <input type="number" min=1 | max=7 class="form-control" id="turno_id" name="street2" placeholder="Turno"autocomplete="off">
+        <input type="number" min=1 | max=7 class="form-control" id="turno_id" name="street2" placeholder="Turno"autocomplete="off"required>
       </div>
       <div class="form-group btn-contacto">
         <button type="submit" class="btn btn-dark">Guardar</button>
@@ -71,52 +77,47 @@
       <ul id="listaCliente">
 
       </ul>
-      <table class="table" id="table">
+      <table class="table " id="tabla">
         <thead>
-            <tr>
+            <tr >
                 <th scope="col">Turno</th>
                 <th scope="col" id= "hora">Hora</th>
-            </tr>
+              </tr>
         </thead>
-        <tbody>
-            <tr>
+        <tbody >
+            <tr id="tturno1" >
                 <th scope="row">Turno 1</th>
-                <td>   8 a 9:30 Am </td>
+                <td>8 a 9:30 Am </td>
                
-            <tr>
+            <tr id="tturno2">
                 <th scope="row">Turno 2</th>
-                <td> 9:30 a 11:00 Am</td>
+                <td>9:30 a 11:00 Am</td>
                 
             </tr>
-            <tr>
+            <tr id="tturno3">
                 <th scope="row">Turno 3</th>
                 <td>11:00 Am a 12:30 Pm</td>
                
             </tr>
-            <tr>
+            <tr id="tturno4">
                 <th scope="row">Turno 4</th>
                 <td>12:30 a 14:00 pm</td>
             </tr>
-            <tr>
+            <tr id="tturno5" >
               <th scope="row">Turno 5</th>
-              <td> 2:00 a 3:30 Pm</td>
+              <td>2:00 a 3:30 Pm</td>
           </tr>
-          <tr>
+          <tr id="tturno6">
             <th scope="row">Turno 6</th>
-            <td> 3:30 a 5:00 Pm</td>
+            <td>3:30 a 5:00 Pm</td>
         </tr>
-        <tr>
+        <tr id="tturno7">
           <th scope="row">Turno 7</th>
           <td>5:00 a 6:30 Pm</td>
       </tr>
                   </tbody>
     </table>
-    
-
-
-
-      
-    
+       
     <!--Parte 5-->
     <footer class="footer ">
       <div class="redes">

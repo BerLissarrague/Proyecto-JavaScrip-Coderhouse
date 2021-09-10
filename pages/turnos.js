@@ -7,46 +7,8 @@ class Persona {
     }
 }
 
-let listaDeTurno = JSON.parse(localStorage.getItem("ListaDeTurno"));
-if (!listaDeTurno) {
-    listaDeTurno = [];
-}
-
-
-const findOne = (turno) => {
-    const personaLista = listaDeTurno.find(persona => persona.turno === turno);
-    if (!personaLista) {
-        throw Error("no existe la persona");
-    }
-    return personaLista;
-
-}
-const update = (turno, edad) => {
-    const persona = findOne(turno);// id a buscar
-    persona.edad = edad//nuevo
-    localStorage.setItem("ListaDeTurno", JSON.stringify(listaDeTurno));
-}
-
-const deletee = (turno) => {
-    listaDeTurno.splice(index, 1)
-
-}
-const remove = (turno) => {
-    const persona = findOne(turno);
-    const index = listaDeTurno.findIndex(persona => persona.turno === turno);
-    if (index >= 0) {
-        listaDeTurno.splice(index, 1)
-    }
-    localStorage.setItem("ListaDeTurno", JSON.stringify(listaDeTurno));
-
-}
-
-const create = (posibleTurno) => {
-    listaDeTurno.push(posibleTurno);
-    localStorage.setItem("ListaDeTurno", JSON.stringify(listaDeTurno));
-}
 let personaRegistrada;
-const listaCliente = document.getElementById("listaCliente")
+const listaCliente = document.getElementById("listaCliente");
 const formulario = document.getElementById("formulario");
 const inputNombre = document.getElementById("full_name_id");
 const inputEdad = document.getElementById("age_id");
@@ -54,82 +16,121 @@ const inputMail = document.getElementById("street1_id");
 const inputTurno = document.getElementById("turno_id");
 
 
+let listaDeTurnos = JSON.parse(localStorage.getItem("listaDeTurnos")) || [];
 
 
-console.log(listaDeTurno);
+// Agrega turno. 
+const agregarTurno = (posibleTurno) => {
+    listaDeTurnos.push(posibleTurno);
+    localStorage.setItem("listaDeTurnos", JSON.stringify(listaDeTurnos));    
+}
+
+const buscarTurno = (turno) => {
+    let personaEncontrado = listaDeTurnos.find(persona => persona.turno === turno);
+    if (!personaEncontrado) {
+        throw Error("no existe la persona");
+    }
+    return personaEncontrado;
+}
+
+const editarTurno = (turno) => {
+    let personaActual = buscarTurno(turno);
+    if (personaActual) {
+        inputNombre.value = personaActual.nombre;
+        inputEdad.value = personaActual.edad;
+        inputMail.value = personaActual.email;
+        inputTurno.value = personaActual.turno;
+        eliminarTurno(personaActual.turno);
+    }
+
+}
+
+const eliminarTurno = (turno) => {
+    const persona = buscarTurno(turno);
+    const index = listaDeTurnos.findIndex(persona => persona.turno === turno);
+    if (index >= 0) {
+        listaDeTurnos.splice(index, 1)
+        localStorage.setItem("listaDeTurnos", JSON.stringify(listaDeTurnos));
+        turnosCliente(listaDeTurnos);
+    }
+}
+// Comparar por turnos
+const comparar = (a, b) => {
+    if (a.turno > b.turno) {
+        return 1;
+    }
+    if (a.turno < b.turno) {
+        return -1;
+    }
+    return 0;
+}
+
 formulario.addEventListener("submit", (event) => {
     const nombre = inputNombre.value;
     const edad = inputEdad.value;
-   
+    const mail = inputMail.value;
+    const turno = inputTurno.value;
 
     if (edad < 15 || edad > 100) {
         alert('Edad inválida');
-        remove();
-    }else if ( edad >= 15 && edad < 18) { 
-       alert("Recorda venir con un mayor");
+        return;
+    } else if (edad >= 15 && edad < 18) {
+        alert("Recorda venir con un mayor");
     }
-    const mail = inputMail.value;
-  
-    const turno = inputTurno.value;
-    
-    
-    if (turno < 0 || turno > 7) {
-        alert('Solo damos 7 turnos diarios')
-        remove()
 
-    }
-    if (listaDeTurno.length > 0) {
+    if (listaDeTurnos.length > 0) {
         // Retorna cliente con turno registrado igual al actual
-        personaRegistrada = listaDeTurno.find(cliente => cliente.turno === turno);
-    }
-     if (turno >= 1 && turno <= 7) {
-        // Si existe turno actual
-        if (personaRegistrada) {
-            alert("El turno esta dado, intenta otro turno");
-            remove()
+        personaRegistrada = listaDeTurnos.find(cliente => cliente.turno === turno);
+
+        if (turno >= 1 && turno <= 7) {
+            // Si existe turno actual
+            if (personaRegistrada) {
+                alert("El turno esta dado, intenta otro turno");
+                return;
+            }
         }
     }
-        if(turno == "" ){
-            alert("turno no definido")
-            remove()
-        }
-        console.log("turno", turno);
-   
 
     const nuevoturno = new Persona(nombre, edad, mail, turno);
-    console.log(nuevoturno);
+    agregarTurno(nuevoturno);
 
-
-    create(nuevoturno);
-    
 })
-const turnosCliente = (listaDeTurno) => {
-    for (let i = 0; i < listaDeTurno.length; i++) {
-        console.log(listaDeTurno[i]);
+const turnosCliente = (listaDeTurnos) => {
+    //  limpia listaCLiente para evitar que se concatene la info de local storage
+    if (listaCliente) {
+        listaCliente.innerHTML = '';
+    }
+
+    //ordena por turno
+    listaDeTurnos.sort(comparar);
+
+    for (let i = 0; i < listaDeTurnos.length; i++) {
+        console.log(listaDeTurnos[i]);
         let itemcliente = document.createElement('li');
         itemcliente.className = "liturnos";
-        itemcliente.textContent = `EL turno numero ${listaDeTurno[i].turno} esta dado. Viene ${listaDeTurno[i].nombre} `;
+        itemcliente.textContent = `El turno numero ${listaDeTurnos[i].turno} ha sido registrado a nombre de ${listaDeTurnos[i].nombre}.`;
         listaCliente.appendChild(itemcliente);
 
-        let btnremove = document.createElement('button');
-        btnremove.textContent = '  Remover ';
-        itemcliente.appendChild(btnremove);
-        btnremove.onclick = () => {
-            remove(listaDeTurno[i].turno);
+        let btnremover = document.createElement('button');
+        btnremover.textContent = 'Remover';
+        btnremover.className = 'btn btn-dark btnremover';
+        btnremover.onclick = () => {
+            eliminarTurno(listaDeTurnos[i].turno);
         }
+        itemcliente.appendChild(btnremover);
 
         let btnupdate = document.createElement('button');
-        btnupdate.textContent = ' Edit ';
-        btnupdate.className='btnedit'
-        itemcliente.appendChild(btnupdate);
-        console.log(btnupdate)
-        btnupdate.onclick = () => {  
-            update(turno, edad);
+        btnupdate.textContent = 'Editar';
+        btnupdate.className = 'btn btn-dark btnedit';
+        btnupdate.onclick = () => {
+            editarTurno(listaDeTurnos[i].turno);
         }
-
-
+        itemcliente.appendChild(btnupdate);
     }
+
 }
 
+turnosCliente(listaDeTurnos);
 
-turnosCliente(listaDeTurno);
+
+
