@@ -171,6 +171,9 @@ ul {
 .btnedit {
   margin: 1%; }
 
+.btnremover {
+  margin-left: 1%; }
+
 @media only screen and (max-width: 600px) {
   .infoconocenos {
     display: flex;

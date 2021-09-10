@@ -108,7 +108,7 @@ const turnosCliente = (listaDeTurnos) => {
         console.log(listaDeTurnos[i]);
         let itemcliente = document.createElement('li');
         itemcliente.className = "liturnos";
-        itemcliente.textContent = `El turno numero ${listaDeTurnos[i].turno} ha sido registrado a nombre de ${listaDeTurnos[i].nombre}.`;
+        itemcliente.textContent = `* El turno numero ${listaDeTurnos[i].turno} ha sido registrado a nombre de ${listaDeTurnos[i].nombre}.`;
         listaCliente.appendChild(itemcliente);
 
         let btnremover = document.createElement('button');
