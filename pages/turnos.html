@@ -2,18 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--fond Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <!-- CSS -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--fond Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <!-- CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./../Css/estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
     
-        <link rel="stylesheet" href="./../Css/estilo.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   
-    <title>Ink Revolution</title>
+  <title>Ink Revolution</title>
 </head>
 
 <body>
@@ -47,17 +51,13 @@
     <form class="form-container" id="formulario">
       <div class="form-group form-groupContacto">
         <label for="full_name_id" class="control-label">Nombre</label>
-        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Nombre"autocomplete="off"required>
+        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Nombre"
+          autocomplete="off" required>
       </div>
 
       <div class="form-group form-groupContacto">
         <label for="street1_id" class="control-label">E-mail</label>
-        <input type="text"
-         class="form-control"
-          id="street1_id" 
-          name="street1" 
-          placeholder="E-mail"
-          autocomplete="off"
+        <input type="text" class="form-control" id="street1_id" name="street1" placeholder="E-mail" autocomplete="off"
           required>
       </div>
 
@@ -68,56 +68,64 @@
 
       <div class="form-group form-groupContacto">
         <label for="street2_id" class="control-label">Turno</label>
-        <input type="number" min=1 | max=7 class="form-control" id="turno_id" name="street2" placeholder="Turno"autocomplete="off"required>
+        <input type="number" min=1 | max=7 class="form-control" id="turno_id" name="street2" placeholder="Turno"
+          autocomplete="off" required>
+      </div>
+
+      <div class="form-group form-groupContacto">
+        <label for="street2_id" class="control-label">Fecha</label>
+        <input type="text" id="datepicker" class="form-control" name="fecha" placeholder="Fecha" autocomplete="off"
+          required>
       </div>
       <div class="form-group btn-contacto">
         <button type="submit" class="btn btn-dark">Guardar</button>
-       </div>
-      </form>
-      <ul id="listaCliente">
+      </div>
 
-      </ul>
-      <table class="table " id="tabla">
-        <thead>
-            <tr >
-                <th scope="col">Turno</th>
-                <th scope="col" id= "hora">Hora</th>
-              </tr>
-        </thead>
-        <tbody >
-            <tr id="tturno1" >
-                <th scope="row">Turno 1</th>
-                <td>8 a 9:30 Am </td>
-               
-            <tr id="tturno2">
-                <th scope="row">Turno 2</th>
-                <td>9:30 a 11:00 Am</td>
-                
-            </tr>
-            <tr id="tturno3">
-                <th scope="row">Turno 3</th>
-                <td>11:00 Am a 12:30 Pm</td>
-               
-            </tr>
-            <tr id="tturno4">
-                <th scope="row">Turno 4</th>
-                <td>12:30 a 14:00 pm</td>
-            </tr>
-            <tr id="tturno5" >
-              <th scope="row">Turno 5</th>
-              <td>2:00 a 3:30 Pm</td>
-          </tr>
-          <tr id="tturno6">
-            <th scope="row">Turno 6</th>
-            <td>3:30 a 5:00 Pm</td>
+    </form>
+    <ul id="listaCliente">
+
+    </ul>
+    <table class="table " id="tabla">
+      <thead>
+        <tr>
+          <th scope="col">Turno</th>
+          <th scope="col" id="hora">Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="tturno1">
+          <th scope="row">Turno 1</th>
+          <td>8 a 9:30 Am </td>
+
+        <tr id="tturno2">
+          <th scope="row">Turno 2</th>
+          <td>9:30 a 11:00 Am</td>
+
+        </tr>
+        <tr id="tturno3">
+          <th scope="row">Turno 3</th>
+          <td>11:00 Am a 12:30 Pm</td>
+
+        </tr>
+        <tr id="tturno4">
+          <th scope="row">Turno 4</th>
+          <td>12:30 a 14:00 pm</td>
+        </tr>
+        <tr id="tturno5">
+          <th scope="row">Turno 5</th>
+          <td>2:00 a 3:30 Pm</td>
+        </tr>
+        <tr id="tturno6">
+          <th scope="row">Turno 6</th>
+          <td>3:30 a 5:00 Pm</td>
         </tr>
         <tr id="tturno7">
           <th scope="row">Turno 7</th>
           <td>5:00 a 6:30 Pm</td>
-      </tr>
-                  </tbody>
+        </tr>
+      </tbody>
     </table>
-       
+
     <!--Parte 5-->
     <footer class="footer ">
       <div class="redes">
@@ -128,14 +136,11 @@
       </div>
 
     </footer>
-
-
-
-    <script src="turnos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="module" src="turnos.js"></script>
+    <script type="module" src="funciones.js"></script>
+    <script type="module" src="modelos.js"></script>
   </body>
 
 </html>
