@@ -1,0 +1,69 @@
+[{
+    "nombre" : "asdasd" ,
+    "edad" : 88,
+    "mail" :"sdasd" , 
+    "fecha" :"12/3/2021" ,
+    "turno" : 1
+},
+
+{
+    "nombre" :"ddasdadea" ,
+    "edad" :77,
+    "mail" :"5asdasd" , 
+    "fecha" :"11/4/2021" ,
+    "turno" : 2
+
+},
+
+{
+    "nombre" : "dadsasd",
+    "edad" :99 ,
+    "mail" :"5asdasddas" , 
+    "fecha" : "10/5/2021", 
+    "turno" : 2
+
+},
+
+{
+    "nombre" : "roberti" ,
+    "edad" :48 ,
+    "mail" :"sdadsadads" , 
+    "fecha" :"1/17/2022",
+    "turno" : 7
+
+},
+
+{
+    "nombre" :"dasd" ,
+    "edad" : 29 ,
+    "mail" :"sdasddasd" , 
+    "fecha" :"12/15/2021",
+    "turno" : 6 
+
+},
+
+{
+    "nombre" :"pepas" ,
+    "edad" : 87,
+    "mail" : "sadasd@ ", 
+    "fecha" :"12/15/2021" ,
+    "turno" :5 
+
+},
+
+{
+    "nombre" : "pepe" ,
+    "edad" : 44,
+    "mail" :"pep@" , 
+    "fecha" :"1/30/2022",
+    "turno" :5 
+},
+
+{
+    "nombre" : "juan Carlos",
+    "edad" : 22 ,
+    "mail" : "jc@g", 
+    "fecha" : "12/21/2021" ,
+    "turno" : 4 
+}
+]

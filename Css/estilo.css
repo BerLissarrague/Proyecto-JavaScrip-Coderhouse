@@ -22,7 +22,8 @@ h2 {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
-  margin: 4%, 4%; }
+  margin: 4%;
+  padding: 2%; }
 
 h3 {
   margin: 0 auto;
