@@ -1,5 +1,5 @@
 
-const URL_ARCHIVO_JSON = './../db/data.json';
+/*const URL_ARCHIVO_JSON = './../db/data.json';
 
 $('#btn1').click(() => {
     $.getJSON( URL_ARCHIVO_JSON, (response, status) => {
@@ -9,4 +9,4 @@ $('#btn1').click(() => {
         //localStorage.setItem("listaDeTurnos", JSON.stringify(response));
     }
    })  
-})
+})*/

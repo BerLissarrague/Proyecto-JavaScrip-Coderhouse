@@ -1,13 +1,14 @@
-
 import { agregarTurno, eliminarTurno, editarTurno, compararPorFecha, compararPorTurno } from "./funciones.js";
 import { Persona } from "./modelos.js";
+
+const URL_ARCHIVO_JSON = '../db/data.json'
+
 let personaRegistrada;
 let fechaRegistrada;
-// Agrega turno. 
 let listaDeTurnos = JSON.parse(localStorage.getItem("listaDeTurnos")) || [];
-//let listaDeTurnos=[];
-const URL_ARCHIVO_JSON = '../db/data.json'
+
 console.log(listaDeTurnos);
+
 $('#btn1').click(() => {
 
     const nombre = $("#full_name_id")[0].value;
@@ -26,7 +27,6 @@ $('#btn1').click(() => {
 
     if (listaDeTurnos.length > 0) {
         // Retorna cliente con turno registrado igual al actual
-
         fechaRegistrada = listaDeTurnos.filter(cliente => cliente.fecha === fecha);
 
         // Retorna cliente con turno registrado igual al actual
@@ -42,23 +42,23 @@ $('#btn1').click(() => {
 
     if (parseInt(turno) >= 1 && parseInt(turno) <= 7) {
         const nuevoturno = new Persona(nombre, edad, mail, fecha, turno);
-        agregarTurno(listaDeTurnos, nuevoturno);     
+        agregarTurno(listaDeTurnos, nuevoturno);
     }
-    
+     
 })
-
-    $.getJSON( URL_ARCHIVO_JSON, (response, status) => {
-  
+       
+  $.getJSON( URL_ARCHIVO_JSON, (response, status) => {
+        listaDeTurnos = response;
         if ( status === 'success') {
+
           console.log(response);
         }
         
         })
-       
+
 
 
 const mostrarTurnos = () => {
-
 
     for (let i = 0; i < listaDeTurnos.length; i++) {
 
@@ -67,18 +67,18 @@ const mostrarTurnos = () => {
         $(".btnremover").click(() => {
 
             eliminarTurno(listaDeTurnos, listaDeTurnos[i].turno);
+           
 
 
         })
         $(".btneditar").click(() => {
             editarTurno(listaDeTurnos, listaDeTurnos[i].turno);
-            listaDeTurnos.sort(compararPorFecha);
-
+          
         });
     }
 }
 
-
+//Calendario
 $(function () {
     $("#datepicker").datepicker();
 });

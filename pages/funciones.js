@@ -1,4 +1,3 @@
-const URL ="./../db/data.json";
 const agregarTurno = (listaDeTurnos, posibleTurno) => {
     listaDeTurnos.push(posibleTurno);
     localStorage.setItem("listaDeTurnos", JSON.stringify(listaDeTurnos));
@@ -12,7 +11,7 @@ const buscarTurno = (listaDeTurnos, turno) => {
     return personaEncontrado;
 }
 
-const editarTurno = (listaDeTurnos, turno) => {
+const editarTurno = (listaDeTurnos,turno ) => {
     let personaActual = buscarTurno(listaDeTurnos, turno);
     if (personaActual) {
         $("#full_name_id")[0].value = personaActual.nombre;
@@ -34,7 +33,7 @@ const eliminarTurno = (listaDeTurnos, turno) => {
     }
 }
 
-// Comparar por turnos
+// Comparar por Fecha
 const compararPorFecha = (a, b) => {
     if (a.fecha > b.fecha) {
         return 1;
@@ -45,6 +44,7 @@ const compararPorFecha = (a, b) => {
 
     return 0;
 }
+// Comparar por Fecha
 const compararPorTurno = (a, b) => {
     if (a.turno > b.turno) {
         return 1;
