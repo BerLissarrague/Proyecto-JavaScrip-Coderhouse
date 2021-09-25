@@ -1,6 +1,7 @@
 const agregarTurno = (listaDeTurnos, posibleTurno) => {
     listaDeTurnos.push(posibleTurno);
     localStorage.setItem("listaDeTurnos", JSON.stringify(listaDeTurnos));
+   
 } 
 
 const buscarTurno = (listaDeTurnos, turno) => {
